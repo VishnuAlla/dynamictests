@@ -1,0 +1,35 @@
+[ {
+    "name" : "component_approver",
+    "description" : "Component Approver",
+    "roleConfig" : {
+      "landingPage" : null
+    }
+  },
+  {
+    "name" : "component_deployer",
+    "description" : "Component Deployer",
+    "roleConfig" : {
+      "landingPage" : null
+    }
+  },
+  {
+    "name" : "component_configurer",
+    "description" : "Component Configurer",
+    "roleConfig" : {
+      "landingPage" : null
+    }
+  },
+  {
+    "name" : "component_admin",
+    "description" : "Component Administrator",
+    "roleConfig" : {
+      "landingPage" : null
+    }
+  },
+  {
+    "name" : "everyone",
+    "description" : "Access for everyone",
+    "roleConfig" : {
+      "landingPage" : null
+    }
+} ]
