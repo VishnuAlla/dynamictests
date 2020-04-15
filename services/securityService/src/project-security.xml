@@ -32,6 +32,8 @@
             </list>
         </property>
         <property name="ignoreUnresolvablePlaceholders" value="true"/>
+        <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
+        <property name="searchSystemEnvironment" value="true"/>
     </bean>
     <bean class="com.wavemaker.runtime.security.config.WMAppSecurityConfig" id="WMAppSecurityConfig">
         <property name="sslConfig" ref="sslConfig"/>
@@ -190,7 +192,7 @@
     <bean class="org.springframework.security.authentication.RememberMeAuthenticationProvider" id="rememberMeAuthenticationProvider">
         <constructor-arg value="WM_APP_KEY"/>
     </bean>
- <bean class="com.wavemaker.commons.model.security.RememberMeConfig" id="rememberMeConfig">
+    <bean class="com.wavemaker.commons.model.security.RememberMeConfig" id="rememberMeConfig">
         <property name="enabled" value="${general.rememberMe.enabled}"/>
         <property name="tokenValiditySeconds" value="${general.rememberMe.timeOut}"/>
     </bean>
@@ -201,47 +203,36 @@
                 <property name="pageName" value=""/>
                 <property name="timeoutValue" value="${general.session.timeout}"/>
                 <property name="type">
-                    <value type="com.wavemaker.commons.model.security.LoginType">SSO</value>
+                    <value type="com.wavemaker.commons.model.security.LoginType">DIALOG</value>
                 </property>
             </bean>
         </property>
         <property name="type">
-            <value type="com.wavemaker.commons.model.security.LoginType">SSO</value>
+            <value type="com.wavemaker.commons.model.security.LoginType">PAGE</value>
         </property>
     </bean>
     <bean class="com.wavemaker.commons.model.security.CSRFConfig" id="csrfConfig">
         <property name="enforceCsrfSecurity" value="${general.xsrf.enabled}"/>
         <property name="headerName" value="X-WM-XSRF-TOKEN"/>
     </bean>
-   
     <bean class="com.wavemaker.commons.model.security.RolesConfig" id="rolesConfig">
         <property name="roleMap">
             <description>Roles based landing page definitions</description>
             <map key-type="java.lang.String" value-type="com.wavemaker.commons.model.security.RoleConfig">
                 <entry key="component_approver">
-                    <bean class="com.wavemaker.commons.model.security.RoleConfig">
-                        <property name="landingPage" value="Main"/>
-                    </bean>
+                    <bean class="com.wavemaker.commons.model.security.RoleConfig"/>
                 </entry>
                 <entry key="component_deployer">
-                    <bean class="com.wavemaker.commons.model.security.RoleConfig">
-                        <property name="landingPage" value="Main"/>
-                    </bean>
+                    <bean class="com.wavemaker.commons.model.security.RoleConfig"/>
                 </entry>
                 <entry key="component_configurer">
-                    <bean class="com.wavemaker.commons.model.security.RoleConfig">
-                        <property name="landingPage" value="Main"/>
-                    </bean>
+                    <bean class="com.wavemaker.commons.model.security.RoleConfig"/>
                 </entry>
                 <entry key="component_admin">
-                    <bean class="com.wavemaker.commons.model.security.RoleConfig">
-                        <property name="landingPage" value="Main"/>
-                    </bean>
+                    <bean class="com.wavemaker.commons.model.security.RoleConfig"/>
                 </entry>
                 <entry key="everyone">
-                    <bean class="com.wavemaker.commons.model.security.RoleConfig">
-                        <property name="landingPage" value="Main"/>
-                    </bean>
+                    <bean class="com.wavemaker.commons.model.security.RoleConfig"/>
                 </entry>
             </map>
         </property>
@@ -259,7 +250,6 @@
     <bean class="com.wavemaker.runtime.security.dmp.FawbDmpRememberMeAuthenticationFilter" id="dmpAuthFilter">
         <constructor-arg ref="authenticationManager"/>
         <constructor-arg ref="wmAppDmpRememberMeService"/>
-        <property name="authenticationSuccessHandler"
-                  ref="successHandler" />
+        <property name="authenticationSuccessHandler" ref="successHandler"/>
     </bean>
 </beans>

@@ -31,6 +31,33 @@
                 </wm-liveform>
             </wm-livetable>
             <wm-label padding="unset 0.5em" name="label1" caption="bind:Variables.dmsService.dataSet"></wm-label>
+            <wm-livetable formlayout="dialog" name="Table1LiveTable1">
+                <wm-table gridfirstrowselect="true" editmode="dialog" name="Table1Table1" title="Table1 List" dataset="bind:Variables.IndextestTable1Data.dataSet" navigation="Basic">
+                    <wm-table-column binding="id" caption="Id" generator="identity" pcdisplay="true" mobiledisplay="true" type="integer" primary-key="true" readonly="true"></wm-table-column>
+                    <wm-table-column binding="column2" caption="Column2" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                    <wm-table-column binding="column3" caption="Column3" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                    <wm-table-action widget-type="button" key="addNewRow" display-name="New" iconclass="wi wi-plus" show="true" class="btn-primary" action="addNewRow()" position="footer" shortcutkey=""></wm-table-action>
+                    <wm-table-row-action key="updaterow" display-name="" title="Edit" iconclass="wi wi-pencil" show="true" class="btn-transparent" action="editRow($event)"></wm-table-row-action>
+                    <wm-table-row-action key="deleterow" display-name="" title="Delete" iconclass="wi wi-trash" show="true" class="btn-transparent" action="deleteRow($event)"></wm-table-row-action>
+                </wm-table>
+                <wm-liveform errormessage="" title="Table1 Info" formlayout="dialog" iconclass="wi wi-edit" name="Table1LiveForm1" dataset="bind:Variables.IndextestTable1Data.dataSet" captionalign="left" captionposition="top">
+                    <wm-layoutgrid columns="2" name="layoutgrid2">
+                        <wm-gridrow name="gridrow2">
+                            <wm-gridcolumn columnwidth="6" name="gridcolumn3">
+                                <wm-form-field name="column2" displayname="Column2" required="false" show="true" generator="assigned" primary-key="false" key="column2" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                    widget="text"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="6" name="gridcolumn4">
+                                <wm-form-field name="column3" displayname="Column3" required="false" show="true" generator="assigned" primary-key="false" key="column3" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                    widget="text"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                    <wm-form-field name="id" displayname="Id" required="true" show="false" generator="identity" primary-key="true" key="id" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" widget="number"></wm-form-field>
+                    <wm-form-action key="cancel" class="form-cancel btn-secondary" iconclass="wi wi-cancel" action="cancel()" display-name="Cancel" show="true" type="button" update-mode="true"></wm-form-action>
+                    <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
+                </wm-liveform>
+            </wm-livetable>
             <wm-label padding="unset 0.5em" name="label2"></wm-label>
         </wm-page-content>
     </wm-content>

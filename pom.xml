@@ -27,6 +27,34 @@
             </resource>
             <resource>
                 <filtering>true</filtering>
+                <directory>services/indextest/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>services/indextest/designtime</directory>
+                <includes>
+                    <include>db_migration_scripts/*.sql</include>
+                </includes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>services/indextest_import/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>services/indextest_import/designtime</directory>
+                <includes>
+                    <include>db_migration_scripts/*.sql</include>
+                </includes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
                 <directory>services/securityService/src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
@@ -129,6 +157,8 @@
                             <sources>
                                 <source>services/MyJavaService/src</source>
                                 <source>services/dms/src</source>
+                                <source>services/indextest/src</source>
+                                <source>services/indextest_import/src</source>
                                 <source>services/securityService/src</source>
                                 <source>services/testdynamic/src</source>
                             </sources>
@@ -473,7 +503,7 @@
         <profile.props.file>development.properties</profile.props.file>
         <spring.security.version>5.1.6.RELEASE</spring.security.version>
         <JWS_HOME>/opt/webserver</JWS_HOME>
-        <wavemaker.studio.version>10.0.12</wavemaker.studio.version>
+        <wavemaker.studio.version>10.1.1</wavemaker.studio.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.lib.directory>${basedir}/lib</project.lib.directory>
     </properties>

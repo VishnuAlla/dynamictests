@@ -1,0 +1,24 @@
+{
+  "sdsd" : {
+    "name" : "sdsd",
+    "description" : "dsdssd",
+    "version" : "V2",
+    "queryString" : "CREATE INDEX table2_col2\n  ON TABLE2 (COLUMN2)",
+    "countQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : false,
+    "type" : "UPDATE",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : true,
+      "typeRef" : "com.fico.dmp.indextest.models.query.SdsdRequest",
+      "method" : "PUT"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "java.lang.Integer",
+      "returns" : "ENTITY",
+      "responseType" : "SINGLE"
+    }
+  }
+}

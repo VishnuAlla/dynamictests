@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <sql-query name="sdsd">
+        <![CDATA[
+        CREATE INDEX table2_col2
+  ON TABLE2 (COLUMN2)
+        ]]>
+    </sql-query>
+</hibernate-mapping>

@@ -99,6 +99,18 @@
     "type" : "MySQL",
     "id" : "testdynamic",
     "dbVendor" : "mysql"
+  }, {
+    "kind" : "service",
+    "name" : "indextest",
+    "type" : "MySQL",
+    "id" : "indextest",
+    "dbVendor" : "mysql"
+  }, {
+    "kind" : "service",
+    "name" : "indextest_import",
+    "type" : "MySQL",
+    "id" : "indextest_import",
+    "dbVendor" : "mysql"
   } ],
   "license" : "public/license.txt",
   "documentation" : "public/readme.html",
